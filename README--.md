@@ -46,4 +46,9 @@ In the end, the final values were determined by manual tuning. The ratio of the 
 1. Clone this repo.
 2. Make a build directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
+![See Screenshot](./images/make_build.PNG)
+
 4. Run it: `./pid`. 
+
+![See Screenshot](./images/listening_mode.PNG)
+
