@@ -56,7 +56,7 @@ The actual implementation of code for a basic PID controller is fairly straightf
 
 -  The "D" for derivate is the change in CTE from one value to the next. This means that 1) if the derivative is quickly changing, the car will correct itself (i.e. higher steering angle) faster, such as in the case of a curve, and 2) if the car is moving outward from the middle, this will cause the steering to get larger (as the derivative sign will match the proportional sign), but if the car is moving toward the center (meaning the derivative value will be negative), the car's steering angle will get smoothed out, leading to a more smoother driving experience. Too high of a coefficient leads to almost constant steering angle changes of large degrees, where although the car will be well-centered it can hardly move. Too low of a D coefficient will lead to the oscillations being too high with more overshooting.
 
-
+Sample video of the car controlled by the 'final tuned' parameters is provided in the last section
 
 ## Rubric- Reflection (Describe how the final hyperparameters were chosen)
 
@@ -64,8 +64,7 @@ The final parameters were chosen based on a combination of playing with the twid
 
 
 ## Rubric - Criteria (The vehicle must successfully drive a lap around the track.)
-The car was ablel to run the full track without going off the edges. A sample video can be found here . Full video could not be loaded because of upload file restriction 
-[here.](https://github.com/mvirgo/PID-Control-Project/blob/master/PID_control_vid.mov)
+The car was able to run the full track without going off the edges. A sample video can be found [here (https://github.com/soumende1/CarND-PID-Control-Project/blob/master/videos/SampleVideo.mp4)
 
-
+Full video could not be loaded because of upload file restriction . This can be provided on request
 
