@@ -26,7 +26,7 @@ In this project a Proportional-Integral-Derivative Controller, (PID), is used  t
 * Simulator. You can download these from the [project intro page](https://github.com/udacity/CarND-PID-Control-Project/releases) in the classroom.
 
 ## Basic Build Instructions 
-## Rubric - Your code should compile)
+## Rubric - Compilation (Your code should compile)
 ### the following steps were followed to compile and run the code
 
 1. Clone this repo.
@@ -38,7 +38,14 @@ In this project a Proportional-Integral-Derivative Controller, (PID), is used  t
 
 ![See Screenshot](./images/listening_mode.PNG)
 
-## Rubric The PID procedure follows what was taught in the lessons.
+## Rubric - Implementation (The PID procedure follows what was taught in the lessons.)
+#### Finding the right coefficients
+
+Initiall the Twiddle algorithm was used for trying out different parameters, then fine tuned with some manual tuning. I had also used an approach with SGD (stochastic gradient descent) before, but that did not seem to perform as well as Twiddle. Multiple runs were made and bit of trial and error approach was used to get the desired parameters
+
+In the end, the final values were determined as (0.2, 0.004, 3.0) that seemed to work well. Increasing or decreasing them caused the  car to veer off during curves, 
+
+## Rubric- Reflection  (Describe the effect each of the P, I, D components had in your implementation.)
 
 #### Components of PID
 The actual implementation of code for a basic PID controller is fairly straightforward, but making the controller actually perform well is the tough part. Having knowledge of each part of "PID" is important:
@@ -48,13 +55,12 @@ The actual implementation of code for a basic PID controller is fairly straightf
 
 These behaved fairly in line with what I was expecting.
 
-#### Finding the right coefficients
-Although it is removed from the final code, I had used Twiddle a little bit to try out different parameters, but found the values found in the original project lessons to be sufficient under my current implementation. I had also used an approach with SGD (stochastic gradient descent) before, but that did not seem to perform as well as Twiddle. I ended up deciding against Twiddle as the results tended to vary greatly - one build of my PID Controller, in a test of 10 runs around the track, made it around six times, half of which were very slow, with the others (using a throttle fully based on steering angle instead of the measured approach I use now with a percentage of steering + a set value) managing to race around the track in excess of 70 mph. Unfortunately, there were also four runs ending with crashes, two of which even happened before the first curve. Part of this was due to noise/variance in the simulator itself, from the looks of it.
+## Rubric- Reflection (Describe how the final hyperparameters were chosen)
 
-In the end, the final values were determined by manual tuning. The ratio of the coefficients to each other that I chose (0.2, 0.004, 3.0) seemed to work well, and I also tried lowering & raising them in conjunction with each other as well as tuning each individually. I typically found that I was creating too high of steering angles (causing crashes if the speed had gotten too high on a straight) by raising them in conjunction with each other, while lowering all of them together meant the car struggled on the larger curves, sometimes not turning enough and shooting off the track.
+The final parameters were chosen based on a combination of playing with the twiddle algorithm, then followed my manual fine tuning using a trial and error approach. Refer to the previous section for further explanation.
 
 
-## Results / Reflection
+## Rubric - Criteria (The vehicle must successfully drive a lap around the track.)
 A video of the simulated car driving around the track can be found [here.](https://github.com/mvirgo/PID-Control-Project/blob/master/PID_control_vid.mov)
 
 
